@@ -75,6 +75,13 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
       <div class="hero-fallback-bg" style="display:none;"></div>
       <div class="hero-overlay"></div>
 
+      <!-- Texto Hero posicionado abajo a la izquierda -->
+      <div class="hero-content">
+        <p class="hero-text font-serif">
+          Makeup Artist · Caracterización · Body Paint · Shootings · Bodas · Cursos de Automaquillaje
+        </p>
+      </div>
+
       <!-- Icono de WhatsApp circular en negro y blanco -->
       <a 
         href={`https://wa.me/${negocio.whatsapp.replace(/\+/g, '')}?text=Hola%20Leire%2C%20me%20gustar%C3%ADa%20consultar%20un%20proyecto.`}
@@ -491,6 +498,22 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
     );
   }
 
+  .hero-content {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    z-index: 50;
+    max-width: 750px;
+  }
+
+  .hero-text {
+    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+    color: var(--color-crema);
+    letter-spacing: 0.03em;
+    line-height: 1.45;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+
   .hero-whatsapp-btn {
     position: absolute;
     bottom: 2rem;
@@ -782,6 +805,15 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
     .logo-img {
       height: 46px;
       transform: translateX(8px);
+    }
+    .hero-content {
+      left: 1.25rem;
+      bottom: 2rem;
+      max-width: calc(100% - 85px);
+    }
+    .hero-text {
+      font-size: 1rem;
+      line-height: 1.4;
     }
   }
 </style>
