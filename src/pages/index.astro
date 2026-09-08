@@ -46,15 +46,14 @@ const galleryImages = [
     <!-- Header Transparente -->
     <header class="hero-header">
       <div class="header-brand">
-        <!-- Muestra logo.png si existe mediante fallback a texto -->
-        <a href="/" class="brand-link">
+        <a href="/" class="brand-link" aria-label="Leire Salgado Logo">
           <img
             src="/logo.png"
             alt="Leire Salgado Logo"
             class="brand-logo"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"
+            onerror="this.style.display='none'; document.getElementById('fallback-brand-text').style.display='inline-block';"
           />
-          <span class="brand-text font-serif">Leire Salgado</span>
+          <span id="fallback-brand-text" class="brand-text font-serif" style="display: none;">Leire Salgado</span>
         </a>
       </div>
 
@@ -434,8 +433,12 @@ const galleryImages = [
   }
 
   .brand-logo {
-    height: 40px;
+    height: 52px;
+    max-height: 70px;
     width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(0.95);
+    display: block;
   }
 
   .brand-text {
