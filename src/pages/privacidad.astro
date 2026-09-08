@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { negocio } from '../data/negocio';
+---
+
+<Layout
+  title={`Política de Privacidad · ${negocio.nombre}`}
+  description={`Política de Privacidad del sitio web de ${negocio.nombre}. Información sobre protección de datos personales.`}
+>
+  <main class="bg-dark" style="min-height: 80vh; padding: 6rem 2rem 4rem;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <a href="/" class="text-accent" style="display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; letter-spacing: 0.05em;">
+        ← Volver al inicio
+      </a>
+
+      <h1 class="font-serif" style="font-size: 2.8rem; margin-bottom: 2rem; color: var(--color-text-cream);">
+        Política de Privacidad
+      </h1>
+
+      <div style="line-height: 1.8; color: var(--color-text-muted);" class="font-sans">
+        <p style="margin-bottom: 1.5rem;">
+          En el sitio web de {negocio.nombre} se respeta profundamente la privacidad de los usuarios y se garantiza la protección de los datos personales de acuerdo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-text-cream);">
+          Responsable del Tratamiento
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          <strong>Responsable:</strong> {negocio.nombre}<br />
+          <strong>Especialidad:</strong> {negocio.profesion}<br />
+          <strong>Contacto:</strong> Vía WhatsApp o Instagram (<a href={negocio.instagram} target="_blank" rel="noopener noreferrer" class="text-accent">@leirekhaleesimkp</a>)
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-text-cream);">
+          Finalidad del Tratamiento de Datos
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          Cuando te pones en contacto a través de WhatsApp, email o redes sociales para consultar disponibilidad, proyectos de caracterización, presupuestos o cursos, tus datos se utilizan exclusivamente para atender tu consulta y gestionar la comunicación del proyecto solicitado.
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-text-cream);">
+          Derechos del Usuario
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, limitación y oposición poniéndote en contacto directo con {negocio.nombre} a través de los canales de contacto publicados.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,204 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Leire Salgado · Makeup Artist & Caracterización",
+  description = "Portfolio de Leire Salgado — Caracterización, Body Paint, Maquillaje Artístico y Editorial en Madrid."
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://leiresalgado.com');
+---
+
+<!usr/bin/env html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
+    <title>{title}</title>
+
+    <!-- Google Fonts: Cormorant Garamond & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    /* Paleta de colores */
+    --color-bg-dark: #0D0D0D;        /* Negro profundo - fondo principal */
+    --color-bg-charcoal: #1A1A1A;    /* Carbón - fondos secundarios */
+    --color-bg-cream: #F2EFE8;       /* Crema/hueso - secciones de respiro */
+    
+    --color-text-cream: #F2EFE8;      /* Texto principal sobre oscuro */
+    --color-text-dark: #0D0D0D;       /* Texto sobre fondo crema */
+    --color-text-muted: rgba(242, 239, 232, 0.65);
+    --color-text-subtle: rgba(242, 239, 232, 0.4);
+    
+    --color-accent-ice: #4A8FA8;      /* Azul hielo - acento puntual */
+    --color-accent-ice-hover: #5ba3bd;
+    --color-border-subtle: rgba(242, 239, 232, 0.1);
+    --color-border-accent: rgba(74, 143, 168, 0.4);
+
+    /* Tipografías */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Reset & Base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-cream);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-ice);
+    color: var(--color-bg-dark);
+  }
+
+  /* Tipografía Global */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-serif-italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  /* Clases utilitarias de paleta */
+  .bg-dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-cream);
+  }
+
+  .bg-charcoal {
+    background-color: var(--color-bg-charcoal);
+    color: var(--color-text-cream);
+  }
+
+  .bg-cream {
+    background-color: var(--color-bg-cream);
+    color: var(--color-text-dark);
+  }
+
+  .text-cream {
+    color: var(--color-text-cream);
+  }
+
+  .text-dark {
+    color: var(--color-text-dark);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+
+  .text-accent {
+    color: var(--color-accent-ice);
+  }
+
+  /* Números de servicios */
+  .service-number {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    color: var(--color-accent-ice);
+    letter-spacing: 0.05em;
+  }
+
+  /* Líneas separadoras de acento */
+  .divider-accent {
+    height: 1px;
+    background-color: var(--color-accent-ice);
+    opacity: 0.6;
+    border: none;
+  }
+
+  .divider-subtle {
+    height: 1px;
+    background-color: var(--color-border-subtle);
+    border: none;
+  }
+
+  /* Enmarcado de imágenes artístico / cinematográfico */
+  .art-frame {
+    position: relative;
+    background-color: var(--color-bg-charcoal);
+    overflow: hidden;
+  }
+
+  .art-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Enlaces y botones sobrios */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .btn-accent {
+    display: inline-block;
+    padding: 0.8em 1.8em;
+    background-color: transparent;
+    color: var(--color-accent-ice);
+    border: 1px solid var(--color-accent-ice);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-accent:hover {
+    background-color: var(--color-accent-ice);
+    color: var(--color-bg-dark);
+  }
+</style>

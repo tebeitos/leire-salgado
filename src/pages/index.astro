@@ -1,0 +1,772 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { negocio, servicios } from '../data/negocio';
+
+const galleryImages = [
+  { src: '/galeria1.jpg', alt: 'Caracterización artística 1' },
+  { src: '/galeria2.jpg', alt: 'Body Paint editorial 2' },
+  { src: '/galeria3.jpg', alt: 'Maquillaje de personaje 3' },
+  { src: '/galeria4.jpg', alt: 'Shooting de moda 4' },
+  { src: '/galeria5.jpg', alt: 'Body Paint artístico 5' },
+  { src: '/galeria6.jpg', alt: 'Caracterización para cine 6' },
+  { src: '/galeria7.jpg', alt: 'Maquillaje de novia 7' },
+  { src: '/galeria8.jpg', alt: 'Proyecto artístico 8' },
+];
+---
+
+<Layout
+  title="Leire Salgado · Makeup Artist · Caracterización y Maquillaje Artístico en Madrid"
+  description="Caracterización, body paint y maquillaje artístico en Madrid. Leire Salgado diseña cada personaje desde cero — primero en papel, luego en una cara."
+>
+  <!-- MENÚ OVERLAY MÓVIL/DESPLEGABLE -->
+  <div id="mobile-menu" class="menu-overlay" aria-hidden="true">
+    <button id="close-menu" class="close-btn" aria-label="Cerrar menú">&times;</button>
+    <nav class="overlay-nav font-serif">
+      <a href="#proceso" class="nav-link">El Proceso</a>
+      <a href="#servicios" class="nav-link">Servicios</a>
+      <a href="#galeria" class="nav-link">Galería</a>
+      <a href="#sobre-leire" class="nav-link">Sobre Leire</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </nav>
+  </div>
+
+  <!-- SECCIÓN 1 — HERO -->
+  <section class="hero-section">
+    <div class="hero-bg-container">
+      <img
+        src="/hero.jpg"
+        alt="Leire Salgado - Caracterización y Makeup Artist"
+        class="hero-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+      />
+      <div class="hero-fallback-bg" style="display:none;"></div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Header Transparente -->
+    <header class="hero-header">
+      <div class="header-brand">
+        <!-- Muestra logo.png si existe mediante fallback a texto -->
+        <a href="/" class="brand-link">
+          <img
+            src="/logo.png"
+            alt="Leire Salgado Logo"
+            class="brand-logo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"
+          />
+          <span class="brand-text font-serif">Leire Salgado</span>
+        </a>
+      </div>
+
+      <button id="open-menu" class="hamburger-btn" aria-label="Abrir menú">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </header>
+
+    <!-- Texto posicionado abajo a la izquierda -->
+    <div class="hero-content">
+      <h1 class="hero-title font-serif">
+        Primero lo dibujo.<br />
+        Luego lo pinto en una cara.
+      </h1>
+      <p class="hero-subtitle font-sans">
+        {negocio.profesion} · Caracterización · Body Paint
+      </p>
+      <a href="#galeria" class="btn-accent hero-btn">
+        Ver mi trabajo
+      </a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2 — EL PROCESO -->
+  <section id="proceso" class="section-proceso bg-cream text-dark">
+    <div class="container">
+      <h2 class="section-title font-serif text-dark" style="text-align: center;">
+        Así empieza todo
+      </h2>
+
+      <div class="proceso-grid">
+        <div class="proceso-col">
+          <div class="proceso-frame">
+            <img
+              src="/boceto.jpg"
+              alt="Boceto dibujado a mano por Leire Salgado"
+              onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/F2EFE8?text=Boceto+en+papel';"
+            />
+          </div>
+          <span class="proceso-caption font-sans">01. El Boceto en papel</span>
+        </div>
+
+        <div class="proceso-col">
+          <div class="proceso-frame">
+            <img
+              src="/resultado.jpg"
+              alt="Personaje ejecutado en la cara"
+              onerror="this.onerror=null; this.src='https://placehold.co/800x1000/0D0D0D/4A8FA8?text=Resultado+en+cara';"
+            />
+          </div>
+          <span class="proceso-caption font-sans">02. La Caracterización final</span>
+        </div>
+      </div>
+
+      <div class="proceso-text font-serif">
+        <p>Antes de abrir un bote, Leire dibuja.</p>
+        <p>Cada personaje empieza en papel —</p>
+        <p>proporciones, colores, sombras, carácter.</p>
+        <p>Lo que ves en la cara es exactamente</p>
+        <p>lo que había en el boceto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3 — SERVICIOS -->
+  <section id="servicios" class="section-servicios bg-dark text-cream">
+    <div class="container">
+      <h2 class="section-title font-serif text-cream" style="margin-bottom: 3rem;">
+        Lo que hago
+      </h2>
+
+      <div class="servicios-list">
+        {servicios.map((s) => (
+          <article class="servicio-item">
+            <div class="servicio-header">
+              <span class="service-number">{s.numero}</span>
+              <h3 class="servicio-titulo font-serif">{s.titulo}</h3>
+            </div>
+            <p class="servicio-desc text-muted font-sans">{s.descripcion}</p>
+            <div class="servicio-divider"></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4 — GALERÍA -->
+  <section id="galeria" class="section-galeria bg-dark text-cream">
+    <div class="container">
+      <h2 class="section-title font-serif text-cream" style="margin-bottom: 3rem;">
+        Galería
+      </h2>
+
+      <!-- Grid mosaico asimétrico: alternando 1 grande + 2 pequeñas -->
+      <div class="mosaic-grid">
+        {galleryImages.map((img, idx) => (
+          <div class={`mosaic-item item-${idx + 1}`}>
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              onerror={`this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/4A8FA8?text=Proyecto+${idx+1}';`}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a
+          href={negocio.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="instagram-link font-sans text-accent"
+        >
+          Ver más en Instagram → @leirekhaleesimkp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5 — SOBRE LEIRE -->
+  <section id="sobre-leire" class="section-sobre bg-cream text-dark">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-img-col">
+          <div class="sobre-frame">
+            <img
+              src="/leire.jpg"
+              alt="Retrato de Leire Salgado"
+              onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/F2EFE8?text=Leire+Salgado';"
+            />
+          </div>
+        </div>
+
+        <div class="sobre-text-col font-sans">
+          <h2 class="section-title font-serif text-dark" style="margin-bottom: 2rem;">
+            Sobre Leire
+          </h2>
+
+          <div class="sobre-bio font-serif">
+            <p>Leire Salgado lleva años construyendo personajes que no existían.</p>
+            <p>Primero en papel. Luego en una cara.</p>
+            <p>Trabaja en Móstoles y por todo Madrid. Y si el proyecto lo merece, más lejos.</p>
+            <p>No hay un look que no empiece con un boceto y una idea.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6 — CONTACTO -->
+  <section id="contacto" class="section-contacto bg-dark text-cream">
+    <div class="container" style="text-align: center; max-width: 700px;">
+      <h2 class="section-title font-serif text-cream" style="margin-bottom: 1rem;">
+        ¿Tienes un proyecto en mente?
+      </h2>
+
+      <p class="contacto-sub font-sans text-muted" style="margin-bottom: 2.5rem; font-size: 1.2rem;">
+        Cuéntame qué necesitas.
+      </p>
+
+      <div class="contacto-actions">
+        <a
+          href={`https://wa.me/${negocio.whatsapp.replace(/\+/g, '')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-accent btn-whatsapp font-sans"
+        >
+          → Escríbeme por WhatsApp
+        </a>
+
+        <div style="margin: 1.5rem 0;">
+          <a
+            href={negocio.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent font-sans"
+            style="font-size: 0.95rem; letter-spacing: 0.05em;"
+          >
+            Instagram: @leirekhaleesimkp
+          </a>
+        </div>
+
+        <a
+          href={`mailto:${negocio.email}`}
+          class="btn-accent btn-email font-sans"
+        >
+          → Envíame un email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer bg-dark text-cream">
+    <div class="container" style="text-align: center;">
+      <div class="footer-main font-serif">
+        <p class="footer-line1">Leire Salgado · Makeup Artist</p>
+        <p class="footer-line2 text-muted">Móstoles · Madrid · Y donde haga falta</p>
+        <p class="footer-line3">
+          <a href={negocio.instagram} target="_blank" rel="noopener noreferrer" class="text-accent">
+            @leirekhaleesimkp
+          </a>
+        </p>
+      </div>
+
+      <div class="footer-bottom text-subtle font-sans" style="margin-top: 3rem; font-size: 0.85rem;">
+        <a href="/aviso-legal" class="footer-link">/aviso-legal</a>
+        <span style="margin: 0 0.5rem;">·</span>
+        <a href="/privacidad" class="footer-link">/privacidad</a>
+        <span style="margin: 0 0.5rem;">·</span>
+        <span>© 2026 Leire Salgado</span>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  // Menú Hamburguesa interactivo
+  const openMenuBtn = document.getElementById('open-menu');
+  const closeMenuBtn = document.getElementById('close-menu');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelectorAll('.overlay-nav a');
+
+  function openMenu() {
+    mobileMenu?.classList.add('active');
+    mobileMenu?.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu?.classList.remove('active');
+    mobileMenu?.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openMenuBtn?.addEventListener('click', openMenu);
+  closeMenuBtn?.addEventListener('click', closeMenu);
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>
+
+<style>
+  /* MENÚ OVERLAY */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(13, 13, 13, 0.96);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--color-text-cream);
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .overlay-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .nav-link {
+    font-size: 2.2rem;
+    color: var(--color-text-cream);
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent-ice);
+  }
+
+  /* CONTAINER REUTILIZABLE */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.8rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* SECCIÓN 1 — HERO */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 2rem 4rem 2rem;
+    overflow: hidden;
+  }
+
+  .hero-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-fallback-bg {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(13, 13, 13, 0.4) 0%,
+      rgba(13, 13, 13, 0.2) 50%,
+      rgba(13, 13, 13, 0.9) 100%
+    );
+  }
+
+  .hero-header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .brand-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .brand-logo {
+    height: 40px;
+    width: auto;
+  }
+
+  .brand-text {
+    font-size: 1.8rem;
+    color: var(--color-text-cream);
+    letter-spacing: 0.02em;
+  }
+
+  .hamburger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0.5rem;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: var(--color-text-cream);
+    transition: transform 0.3s ease;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin-left: max(0px, calc((100vw - 1200px) / 2));
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--color-text-cream);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  .hero-btn {
+    background-color: var(--color-accent-ice);
+    color: var(--color-bg-dark);
+    font-weight: 600;
+  }
+
+  .hero-btn:hover {
+    background-color: transparent;
+    color: var(--color-accent-ice);
+  }
+
+  /* SECCIÓN 2 — EL PROCESO */
+  .section-proceso {
+    padding: 7rem 0;
+  }
+
+  .proceso-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin: 4rem 0 3.5rem 0;
+  }
+
+  .proceso-frame {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: var(--color-bg-charcoal);
+    overflow: hidden;
+  }
+
+  .proceso-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .proceso-caption {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: rgba(13, 13, 13, 0.7);
+    text-transform: uppercase;
+  }
+
+  .proceso-text {
+    text-align: center;
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    line-height: 1.7;
+    color: var(--color-text-dark);
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  /* SECCIÓN 3 — SERVICIOS */
+  .section-servicios {
+    padding: 7rem 0;
+  }
+
+  .servicios-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .servicio-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .servicio-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+
+  .servicio-header .service-number {
+    font-size: 1.6rem;
+  }
+
+  .servicio-titulo {
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    color: var(--color-text-cream);
+  }
+
+  .servicio-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    padding-left: calc(1.6rem + 1.5rem);
+    max-width: 800px;
+  }
+
+  .servicio-divider {
+    height: 1px;
+    background-color: var(--color-accent-ice);
+    opacity: 0.35;
+    margin-top: 1.5rem;
+  }
+
+  /* SECCIÓN 4 — GALERÍA */
+  .section-galeria {
+    padding: 7rem 0;
+  }
+
+  /* Grid Mosaico Asimétrico */
+  .mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .mosaic-item {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-bg-charcoal);
+    aspect-ratio: 4 / 5;
+  }
+
+  .mosaic-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .mosaic-item:hover img {
+    transform: scale(1.03);
+  }
+
+  /* Layout asimétrico alternando 1 grande + 2 pequeñas */
+  .item-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+  .item-2 { grid-column: span 1; }
+  .item-3 { grid-column: span 1; }
+
+  .item-4 { grid-column: span 1; }
+  .item-5 { grid-column: span 1; }
+  .item-6 {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+  .item-7 { grid-column: span 1; }
+  .item-8 { grid-column: span 2; }
+
+  .instagram-link {
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--color-accent-ice);
+    padding-bottom: 0.3rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .instagram-link:hover {
+    opacity: 0.8;
+  }
+
+  /* SECCIÓN 5 — SOBRE LEIRE */
+  .section-sobre {
+    padding: 7rem 0;
+  }
+
+  .sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .sobre-frame {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: var(--color-bg-charcoal);
+    overflow: hidden;
+  }
+
+  .sobre-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sobre-bio {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    line-height: 1.8;
+    color: var(--color-text-dark);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* SECCIÓN 6 — CONTACTO */
+  .section-contacto {
+    padding: 8rem 0;
+  }
+
+  .contacto-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-whatsapp {
+    background-color: var(--color-accent-ice);
+    color: var(--color-bg-dark);
+    font-weight: 600;
+    padding: 1.1em 2.4em;
+    font-size: 1rem;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: transparent;
+    color: var(--color-accent-ice);
+  }
+
+  .btn-email {
+    padding: 1em 2.2em;
+    font-size: 0.95rem;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    padding: 5rem 0 3rem 0;
+    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  .footer-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .footer-link {
+    color: var(--color-text-subtle);
+    transition: color 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--color-text-cream);
+  }
+
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 900px) {
+    .mosaic-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .item-1, .item-6, .item-8 {
+      grid-column: span 2;
+      grid-row: auto;
+    }
+
+    .sobre-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-section {
+      padding: 1.5rem 1.5rem 3rem 1.5rem;
+    }
+    .hero-title {
+      font-size: 2.3rem;
+    }
+    .mosaic-grid {
+      grid-template-columns: 1fr;
+    }
+    .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8 {
+      grid-column: span 1;
+      grid-row: auto;
+      aspect-ratio: 4 / 5;
+    }
+    .servicio-desc {
+      padding-left: 0;
+    }
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { negocio } from '../data/negocio';
+---
+
+<Layout
+  title={`Aviso Legal · ${negocio.nombre}`}
+  description={`Aviso Legal del sitio web oficial de ${negocio.nombre}, ${negocio.profesion} en Madrid.`}
+>
+  <main class="bg-dark" style="min-height: 80vh; padding: 6rem 2rem 4rem;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <a href="/" class="text-accent" style="display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; letter-spacing: 0.05em;">
+        ← Volver al inicio
+      </a>
+
+      <h1 class="font-serif" style="font-size: 2.8rem; margin-bottom: 2rem; color: var(--color-text-cream);">
+        Aviso Legal
+      </h1>
+
+      <div style="line-height: 1.8; color: var(--color-text-muted);" class="font-sans">
+        <p style="margin-bottom: 1.5rem;">
+          En cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), se informa de los datos identificativos del titular de este sitio web:
+        </p>
+
+        <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
+          <li><strong>Titular:</strong> {negocio.nombre}</li>
+          <li><strong>Actividad:</strong> {negocio.profesion} — {negocio.especialidad}</li>
+          <li><strong>Ubicación / Cobertura:</strong> {negocio.ciudad} ({negocio.cobertura})</li>
+          <li><strong>Contacto Instagram:</strong> <a href={negocio.instagram} target="_blank" rel="noopener noreferrer" class="text-accent">@leirekhaleesimkp</a></li>
+          <li><strong>Contacto Email:</strong> {negocio.email}</li>
+        </ul>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-text-cream);">
+          Propiedad Intelectual y Contenidos
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          Todos los derechos de propiedad intelectual de los contenidos de este sitio web, incluyendo sin limitación fotografías de caracterización, bocetos, obras de body paint, textos, logotipos y diseño gráfico, pertenecen en exclusiva a {negocio.nombre} o a terceros autorizados.
+        </p>
+        <p style="margin-bottom: 1.5rem;">
+          Queda prohibida la reproducción, distribución, comunicación pública o transformación de cualquier contenido sin la autorización previa y por escrito de la titular.
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-text-cream);">
+          Enlaces Externos
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          Este sitio web puede incluir enlaces a sitios web de terceros (como Instagram o WhatsApp). La titular no asume responsabilidad sobre los contenidos o políticas de privacidad de dichos sitios ajenos.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>
