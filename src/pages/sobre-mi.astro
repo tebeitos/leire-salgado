@@ -1,0 +1,374 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { negocio } from '../data/negocio';
+
+const title = "Sobre Mí · Leire Salgado | Caracterización y Makeup Artist en Madrid";
+const description = "Conoce a Leire Salgado, maquilladora artística y especialista en caracterización y body paint en Móstoles y Madrid. Cada proyecto empieza en papel.";
+---
+
+<Layout title={title} description={description}>
+  <!-- HEADER NEGRO CON LOGO EN LA DERECHA Y HAMBURGUESA EN LA IZQUIERDA -->
+  <header class="site-header site-header-negro">
+    <div class="container header-inner">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+        <span class="hamburger-line line-blanca"></span>
+        <span class="hamburger-line line-blanca"></span>
+        <span class="hamburger-line line-blanca"></span>
+      </button>
+
+      <a href="/" class="logo-link">
+        <img src="/logo.png" alt="Leire Salgado" class="logo-img" onerror="this.style.display='none';" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Overlay Menú Navegación -->
+  <nav id="mobile-menu" class="mobile-menu bg-negro">
+    <button id="menu-close" class="menu-close" aria-label="Cerrar menú">&times;</button>
+    <ul class="menu-list">
+      <li><a href="/#servicios" class="menu-link">Servicios</a></li>
+      <li><a href="/#galeria" class="menu-link">Galería</a></li>
+      <li><a href="/sobre-mi" class="menu-link text-granate">Sobre mí</a></li>
+      <li><a href="/#reservar" class="menu-link">Contactar</a></li>
+    </ul>
+  </nav>
+
+  <!-- BOTONES DE CONTACTO FLOTANTES FIJOS (A LA DERECHA) -->
+  <div class="floating-contact-bar">
+    <a 
+      href={`https://wa.me/${negocio.whatsapp.replace(/\+/g, '')}?text=Hola%20Leire%2C%20he%20le%C3%ADdo%20tu%20historia%20y%20me%20gustar%C3%ADa%20consultar%20un%20proyecto.`}
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="floating-contact-btn whatsapp-btn"
+      aria-label="Contactar por WhatsApp"
+      title="WhatsApp"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.893 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.205 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </a>
+
+    <a 
+      href={`mailto:${negocio.email}`}
+      class="floating-contact-btn email-btn"
+      aria-label="Enviar un Email"
+      title="Email"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2"/>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+    </a>
+  </div>
+
+  <main class="page-sobre-mi bg-crema">
+    <section class="sobre-hero container">
+      <h1 class="sobre-titulo-principal">Sobre mí</h1>
+      
+      <div class="sobre-grid">
+        <div class="sobre-col-foto">
+          <img
+            src="/leire.jpg"
+            alt="Leire Salgado Makeup Artist"
+            class="sobre-foto"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/F2EFE8?text=Leire+Salgado';"
+          />
+        </div>
+
+        <div class="sobre-col-texto">
+          <p class="sobre-parrafo sobre-destacado">
+            Leire Salgado lleva años construyendo personajes que no existían.
+          </p>
+          <p class="sobre-parrafo sobre-criterio">
+            <strong>Primero en papel. Luego en una cara.</strong>
+          </p>
+          <p class="sobre-parrafo sobre-destacado">
+            Trabaja en Móstoles y por todo Madrid. Y si el proyecto lo merece, más lejos.
+          </p>
+          <p class="sobre-parrafo sobre-destacado">
+            Especializada en caracterización, cine, teatro, shootings de moda, body paint y eventos especiales.
+          </p>
+          <p class="sobre-parrafo sobre-criterio">
+            <strong>No hay un look que no empiece con un boceto y una idea clara.</strong>
+          </p>
+
+          <div style="margin-top: 2.5rem;">
+            <a href="/#reservar" class="btn-granate">
+              → Cuéntame tu proyecto
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer bg-negro">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <p class="footer-nombre">{negocio.nombre} · Makeup Artist</p>
+        <p class="footer-ubicacion">{negocio.ciudad} · {negocio.cobertura}</p>
+        <p class="footer-instagram">
+          <a href={negocio.instagram} target="_blank" rel="noopener noreferrer">@leirekhaleesimkp</a>
+        </p>
+      </div>
+      <div class="footer-legal">
+        <a href="/aviso-legal">/aviso-legal</a>
+        <span>·</span>
+        <a href="/privacidad">/privacidad</a>
+        <span>·</span>
+        <span>© 2026 {negocio.nombre}</span>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuLinks = document.querySelectorAll('.menu-link');
+
+  function openMenu() {
+    mobileMenu?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu?.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  menuToggle?.addEventListener('click', openMenu);
+  menuClose?.addEventListener('click', closeMenu);
+  menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+</script>
+
+<style>
+  .container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.5rem 0;
+  }
+
+  .site-header-negro {
+    background-color: var(--color-negro);
+    position: relative;
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0.5rem;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: var(--color-crema);
+  }
+
+  /* Overlay Menú Mobile */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-close {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: none;
+    border: none;
+    color: var(--color-crema);
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+
+  .menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .menu-link {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    color: var(--color-crema);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .menu-link:hover {
+    color: var(--color-granate);
+  }
+
+  /* Floating Contact Bar */
+  .floating-contact-bar {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 2rem;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .floating-contact-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .floating-contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+
+  .whatsapp-btn {
+    background-color: #25D366;
+  }
+
+  .email-btn {
+    background-color: var(--color-granate);
+  }
+
+  /* Página Sobre Mí */
+  .page-sobre-mi {
+    padding: 4rem 0 6rem 0;
+  }
+
+  .sobre-titulo-principal {
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    color: var(--color-grafito);
+    margin-bottom: 3rem;
+  }
+
+  .sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  .sobre-foto {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    background-color: var(--color-charcoal);
+  }
+
+  .sobre-col-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.15rem;
+    color: var(--color-grafito);
+    line-height: 1.8;
+  }
+
+  .sobre-criterio {
+    font-size: 1.3rem;
+    color: var(--color-granate);
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 4rem 0 2rem 0;
+    border-top: 1px solid rgba(242, 239, 232, 0.1);
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-nombre {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+  }
+
+  .footer-ubicacion {
+    font-size: 0.95rem;
+    color: rgba(242, 239, 232, 0.7);
+  }
+
+  .footer-instagram a {
+    color: var(--color-granate);
+    text-decoration: none;
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: rgba(242, 239, 232, 0.4);
+  }
+
+  .footer-legal a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media (max-width: 850px) {
+    .sobre-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

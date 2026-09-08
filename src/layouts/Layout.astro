@@ -1,34 +1,74 @@
 ---
+import { negocio } from '../data/negocio';
+
 interface Props {
   title?: string;
   description?: string;
 }
 
 const {
-  title = "Leire Salgado · Makeup Artist & Caracterización",
-  description = "Portfolio de Leire Salgado — Caracterización, Body Paint, Maquillaje Artístico y Editorial en Madrid."
+  title = "Leire Salgado · Makeup Artist & Caracterización en Madrid",
+  description = "Caracterización, body paint y maquillaje artístico en Madrid y Móstoles. Leire Salgado diseña cada personaje desde cero — primero en papel, luego en una cara."
 } = Astro.props;
 
+const siteUrl = Astro.url.origin || 'https://leiresalgado.com';
+const ogImageUrl = new URL('/hero.jpg', siteUrl).href;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://leiresalgado.com');
 ---
 
-<!usr/bin/env html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL.href} />
-    <title>{title}</title>
 
-    <!-- Google Fonts: Cormorant Garamond & Inter -->
+    <!-- SEO Local & Open Graph -->
+    <meta name="geo.region" content="ES-M" />
+    <meta name="geo.placename" content="Móstoles, Madrid" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Leire Salgado · Makeup Artist" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Leire Salgado · Makeup Artist & Caracterización",
+      "image": "/hero.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Móstoles",
+        "addressRegion": "Madrid",
+        "addressCountry": "ES"
+      },
+      "areaServed": ["Madrid", "Móstoles", "España"],
+      "url": "https://leiresalgado.com",
+      "description": "Caracterización, body paint y maquillaje artístico en Madrid."
+    })} />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" 
+      rel="stylesheet" 
     />
   </head>
   <body>
@@ -39,28 +79,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://leiresal
 <style is:global>
   :root {
     /* Paleta de colores */
-    --color-bg-dark: #0D0D0D;        /* Negro profundo - fondo principal */
-    --color-bg-charcoal: #1A1A1A;    /* Carbón - fondos secundarios */
-    --color-bg-cream: #F2EFE8;       /* Crema/hueso - secciones de respiro */
-    
-    --color-text-cream: #F2EFE8;      /* Texto principal sobre oscuro */
-    --color-text-dark: #0D0D0D;       /* Texto sobre fondo crema */
-    --color-text-muted: rgba(242, 239, 232, 0.65);
-    --color-text-subtle: rgba(242, 239, 232, 0.4);
-    
-    --color-accent-garnet: #A62639;   /* Rojo granate - acento puntual */
-    --color-accent-garnet-hover: #c43147;
-    --color-accent-ice: #A62639;      /* Alias para compatibilidad */
-    --color-accent-ice-hover: #c43147;
-    --color-border-subtle: rgba(242, 239, 232, 0.1);
-    --color-border-accent: rgba(166, 38, 57, 0.4);
+    --color-crema: #F2EFE8;
+    --color-grafito: #2D2D2D;
+    --color-granate: #A62639;       /* Rojo Granate principal */
+    --color-granate-hover: #c43147;
+    --color-negro: #0D0D0D;
+    --color-charcoal: #1A1A1A;
+
+    /* Aliases */
+    --color-accent: var(--color-granate);
+    --color-accent-ice: var(--color-granate);
+    --color-terracota: var(--color-granate);
 
     /* Tipografías */
     --font-serif: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
-  /* Reset & Base */
   *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -68,139 +103,128 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://leiresal
   }
 
   html {
-    font-family: var(--font-sans);
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-cream);
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    background-color: var(--color-negro);
+    color: var(--color-crema);
+    overflow-x: hidden;
   }
 
   body {
-    min-height: 100vh;
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-cream);
+    font-family: var(--font-sans);
+    background-color: var(--color-negro);
+    color: var(--color-crema);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: var(--color-accent-ice);
-    color: var(--color-bg-dark);
+    background-color: var(--color-granate);
+    color: var(--color-crema);
   }
 
-  /* Tipografía Global */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-  }
-
+  /* Utility font classes */
   .font-serif {
     font-family: var(--font-serif);
-  }
-
-  .font-serif-italic {
-    font-family: var(--font-serif);
-    font-style: italic;
   }
 
   .font-sans {
     font-family: var(--font-sans);
   }
 
-  /* Clases utilitarias de paleta */
-  .bg-dark {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-cream);
+  /* Headings & Serif */
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  h1 em, h2 em, h3 em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* Background Utility Classes */
+  .bg-negro {
+    background-color: var(--color-negro);
+    color: var(--color-crema);
+  }
+
+  .bg-crema {
+    background-color: var(--color-crema);
+    color: var(--color-grafito);
+  }
+
+  .bg-crema-oscuro {
+    background-color: #E8E4DA;
+    color: var(--color-grafito);
   }
 
   .bg-charcoal {
-    background-color: var(--color-bg-charcoal);
-    color: var(--color-text-cream);
+    background-color: var(--color-charcoal);
+    color: var(--color-crema);
   }
 
-  .bg-cream {
-    background-color: var(--color-bg-cream);
-    color: var(--color-text-dark);
+  .text-granate, .text-terracota, .text-accent {
+    color: var(--color-granate);
   }
 
-  .text-cream {
-    color: var(--color-text-cream);
+  .text-crema {
+    color: var(--color-crema);
   }
 
-  .text-dark {
-    color: var(--color-text-dark);
+  .text-grafito {
+    color: var(--color-grafito);
   }
 
   .text-muted {
-    color: var(--color-text-muted);
+    color: rgba(242, 239, 232, 0.7);
   }
 
-  .text-accent {
-    color: var(--color-accent-ice);
-  }
-
-  /* Números de servicios */
-  .service-number {
-    font-family: var(--font-sans);
-    font-weight: 700;
-    color: var(--color-accent-ice);
-    letter-spacing: 0.05em;
-  }
-
-  /* Líneas separadoras de acento */
-  .divider-accent {
-    height: 1px;
-    background-color: var(--color-accent-ice);
-    opacity: 0.6;
-    border: none;
-  }
-
-  .divider-subtle {
-    height: 1px;
-    background-color: var(--color-border-subtle);
-    border: none;
-  }
-
-  /* Enmarcado de imágenes artístico / cinematográfico */
-  .art-frame {
-    position: relative;
-    background-color: var(--color-bg-charcoal);
-    overflow: hidden;
-  }
-
-  .art-frame img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: opacity 0.4s ease;
-  }
-
-  /* Enlaces y botones sobrios */
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .btn-accent {
+  /* Botones principales estilo Patricia Mayo con Rojo Granate */
+  .btn-naranja, .btn-granate, .btn-accent {
     display: inline-block;
-    padding: 0.8em 1.8em;
-    background-color: transparent;
-    color: var(--color-accent-ice);
-    border: 1px solid var(--color-accent-ice);
+    padding: 1em 2.2em;
+    background-color: var(--color-granate);
+    color: var(--color-crema);
     font-family: var(--font-sans);
-    font-size: 0.875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border: 1px solid var(--color-granate);
     transition: all 0.3s ease;
     cursor: pointer;
+    text-align: center;
   }
 
-  .btn-accent:hover {
-    background-color: var(--color-accent-ice);
-    color: var(--color-bg-dark);
+  .btn-naranja:hover, .btn-granate:hover, .btn-accent:hover {
+    background-color: transparent;
+    color: var(--color-granate);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 1em 2.2em;
+    background-color: transparent;
+    color: var(--color-granate);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border: 1px solid var(--color-granate);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-granate);
+    color: var(--color-crema);
   }
 </style>
