@@ -43,7 +43,7 @@ const galleryImages = [
       <div class="hero-overlay"></div>
     </div>
 
-    <!-- Header Transparente -->
+    <!-- Header Transparente por encima de la foto Hero -->
     <header class="hero-header">
       <div class="header-brand">
         <a href="/" class="brand-link" aria-label="Leire Salgado Logo">
@@ -51,9 +51,7 @@ const galleryImages = [
             src="/logo.png"
             alt="Leire Salgado Logo"
             class="brand-logo"
-            onerror="this.style.display='none'; document.getElementById('fallback-brand-text').style.display='inline-block';"
           />
-          <span id="fallback-brand-text" class="brand-text font-serif" style="display: none;">Leire Salgado</span>
         </a>
       </div>
 
@@ -374,7 +372,7 @@ const galleryImages = [
     min-height: 600px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 2rem 2rem 4rem 2rem;
     overflow: hidden;
   }
@@ -416,35 +414,31 @@ const galleryImages = [
   }
 
   .hero-header {
-    position: relative;
-    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
+    padding: 2rem 2rem 0 2rem;
   }
 
   .brand-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    display: inline-block;
   }
 
   .brand-logo {
-    height: 52px;
-    max-height: 70px;
+    height: 55px;
+    max-height: 80px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(0.95);
+    filter: brightness(0) invert(0.95) drop-shadow(0 2px 10px rgba(0, 0, 0, 0.7));
     display: block;
-  }
-
-  .brand-text {
-    font-size: 1.8rem;
-    color: var(--color-text-cream);
-    letter-spacing: 0.02em;
   }
 
   .hamburger-btn {
