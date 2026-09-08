@@ -46,11 +46,12 @@ const galleryImages = [
     <!-- Header Transparente por encima de la foto Hero -->
     <header class="hero-header">
       <div class="header-brand">
-        <a href="/" class="brand-link" aria-label="Leire Salgado Logo">
+        <a href="/" class="brand-link">
           <img
             src="/logo.png"
-            alt="Leire Salgado Logo"
+            alt=""
             class="brand-logo"
+            onerror="this.style.display='none';"
           />
         </a>
       </div>
@@ -437,7 +438,6 @@ const galleryImages = [
     max-height: 80px;
     width: auto;
     object-fit: contain;
-    filter: brightness(0) invert(0.95) drop-shadow(0 2px 10px rgba(0, 0, 0, 0.7));
     display: block;
   }
 
