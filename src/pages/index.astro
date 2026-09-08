@@ -429,8 +429,14 @@ const galleryImages = [
     padding: 2rem 2rem 0 2rem;
   }
 
+  .header-brand {
+    display: flex;
+    align-items: center;
+  }
+
   .brand-link {
-    display: inline-block;
+    display: flex;
+    align-items: center;
   }
 
   .brand-logo {
@@ -447,8 +453,11 @@ const galleryImages = [
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 6px;
     padding: 0.5rem;
+    align-self: center;
   }
 
   .hamburger-line {
@@ -748,6 +757,15 @@ const galleryImages = [
   }
 
   @media (max-width: 600px) {
+    .hero-header {
+      padding: 1.5rem 1rem 0 1.5rem;
+    }
+    .header-brand {
+      transform: translateX(8px);
+    }
+    .brand-logo {
+      height: 48px;
+    }
     .hero-section {
       padding: 1.5rem 1.5rem 3rem 1.5rem;
     }
