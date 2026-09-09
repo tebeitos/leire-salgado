@@ -7,38 +7,43 @@ import { negocio } from '../data/negocio';
   title={`Política de Privacidad · ${negocio.nombre}`}
   description={`Política de Privacidad del sitio web de ${negocio.nombre}. Información sobre protección de datos personales.`}
 >
-  <main class="bg-dark" style="min-height: 80vh; padding: 6rem 2rem 4rem;">
-    <div style="max-width: 800px; margin: 0 auto;">
-      <a href="/" class="text-accent" style="display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; letter-spacing: 0.05em;">
-        ← Volver al inicio
+  <header class="site-header-negro">
+    <div class="container header-inner">
+      <a href="/" class="back-link font-sans">&larr; Volver al inicio</a>
+      <a href="/" class="logo-link">
+        <img src="/logo.png" alt="Leire Salgado" class="logo-img" onerror="this.style.display='none';" />
       </a>
+    </div>
+  </header>
 
-      <h1 class="font-serif" style="font-size: 2.8rem; margin-bottom: 2rem; color: var(--color-text-cream);">
+  <main class="bg-negro" style="min-height: 80vh; padding: 4rem 1.5rem 5rem;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h1 class="font-serif" style="font-size: 2.8rem; margin-bottom: 2rem; color: var(--color-crema);">
         Política de Privacidad
       </h1>
 
-      <div style="line-height: 1.8; color: var(--color-text-muted);" class="font-sans">
+      <div style="line-height: 1.8; color: rgba(242, 239, 232, 0.85);" class="font-sans">
         <p style="margin-bottom: 1.5rem;">
           En el sitio web de {negocio.nombre} se respeta profundamente la privacidad de los usuarios y se garantiza la protección de los datos personales de acuerdo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).
         </p>
 
-        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-text-cream);">
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
           Responsable del Tratamiento
         </h2>
         <p style="margin-bottom: 1.5rem;">
           <strong>Responsable:</strong> {negocio.nombre}<br />
           <strong>Especialidad:</strong> {negocio.profesion}<br />
-          <strong>Contacto:</strong> Vía WhatsApp o Instagram (<a href={negocio.instagram} target="_blank" rel="noopener noreferrer" class="text-accent">@leirekhaleesimkp</a>)
+          <strong>Contacto:</strong> Vía WhatsApp o Instagram (<a href={negocio.instagram} target="_blank" rel="noopener noreferrer" class="text-granate">@leirekhaleesimkp</a>)
         </p>
 
-        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-text-cream);">
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
           Finalidad del Tratamiento de Datos
         </h2>
         <p style="margin-bottom: 1.5rem;">
           Cuando te pones en contacto a través de WhatsApp, email o redes sociales para consultar disponibilidad, proyectos de caracterización, presupuestos o cursos, tus datos se utilizan exclusivamente para atender tu consulta y gestionar la comunicación del proyecto solicitado.
         </p>
 
-        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-text-cream);">
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
           Derechos del Usuario
         </h2>
         <p style="margin-bottom: 1.5rem;">
@@ -48,3 +53,52 @@ import { negocio } from '../data/negocio';
     </div>
   </main>
 </Layout>
+
+<style>
+  .container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .site-header-negro {
+    background-color: var(--color-negro);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(242, 239, 232, 0.1);
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .back-link {
+    color: var(--color-granate);
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    transition: opacity 0.3s ease;
+  }
+
+  .back-link:hover {
+    opacity: 0.8;
+  }
+
+  .logo-img {
+    height: 68px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  @media (max-width: 600px) {
+    .site-header-negro {
+      padding: 1.25rem 0;
+    }
+    .logo-img {
+      height: 46px;
+    }
+  }
+</style>
