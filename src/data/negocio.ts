@@ -5,7 +5,7 @@ export const negocio = {
   ciudad: "Madrid",
   cobertura: "En Madrid y en donde haga falta",
   instagram: "https://www.instagram.com/leirekhaleesimkp",
-  whatsapp: "34XXXXXXXXX",
+  whatsapp: "34670372923",
   email: "PENDIENTE",
 };
 
