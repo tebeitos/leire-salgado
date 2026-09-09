@@ -127,7 +127,6 @@ const description = "Conoce a Leire Salgado, maquilladora artística y especiali
     <div class="lightbox-content">
       <button id="lightbox-close" class="lightbox-close" aria-label="Cerrar imagen ampliada">&times;</button>
       <img id="lightbox-img" src="" alt="" class="lightbox-img" />
-      <p id="lightbox-caption" class="lightbox-caption font-sans"></p>
     </div>
   </div>
 
@@ -177,7 +176,6 @@ const description = "Conoce a Leire Salgado, maquilladora artística y especiali
   const lightboxOverlay = document.getElementById('lightbox-overlay');
   const lightboxClose = document.getElementById('lightbox-close');
   const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
-  const lightboxCaption = document.getElementById('lightbox-caption');
 
   const sobreFoto = document.querySelector<HTMLImageElement>('.sobre-foto');
 
@@ -186,9 +184,6 @@ const description = "Conoce a Leire Salgado, maquilladora artística y especiali
       if (!lightboxModal || !lightboxImg) return;
       lightboxImg.src = sobreFoto.src;
       lightboxImg.alt = sobreFoto.alt || 'Leire Salgado';
-      if (lightboxCaption) {
-        lightboxCaption.textContent = sobreFoto.alt || '';
-      }
       lightboxModal.classList.add('active');
       lightboxModal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
