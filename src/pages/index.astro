@@ -115,8 +115,8 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
 
     <!-- SECCIÓN GALERÍAS DIVIDIDAS -->
     <section id="galeria" class="galeria-seccion">
-      <div class="container" style="padding-top: 1.5rem; padding-bottom: 1rem;">
-        <h2 class="section-title font-serif" style="text-align: center; margin-bottom: 0.5rem;">
+      <div class="container galeria-header">
+        <h2 class="section-title font-serif">
           Galería
         </h2>
       </div>
@@ -611,10 +611,16 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
   /* SECCIÓN 6 — GALERÍA COMPLETA MOSAICO */
   /* SECCIÓN GALERÍA MOSAICO */
   .galeria-seccion {
-    padding-bottom: 2.5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     gap: 0;
+  }
+
+  .galeria-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
 
   .mosaico {
