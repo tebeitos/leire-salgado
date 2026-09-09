@@ -135,54 +135,74 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
         </h2>
       </div>
 
-      <!-- FILA 1: Grande izquierda, dos pequeñas derecha -->
+      <!-- FILA 1: galeria6 (grande), galeria7 y galeria8 (pequeñas) -->
       <div class="mosaico">
-        <div class="mosaico-grande">
-          <img
-            src="/galeria1.jpg"
-            alt="Trabajo Leire Salgado 1"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+1';"
-          />
-        </div>
-        <div class="mosaico-pequeñas">
-          <img
-            src="/galeria2.jpg"
-            alt="Trabajo Leire Salgado 2"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+2';"
-          />
-          <img
-            src="/galeria3.jpg"
-            alt="Trabajo Leire Salgado 3"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+3';"
-          />
-        </div>
-      </div>
-
-      <!-- FILA 2: Dos pequeñas izquierda, grande derecha -->
-      <div class="mosaico mosaico-invertido">
-        <div class="mosaico-pequeñas">
-          <img
-            src="/galeria4.jpg"
-            alt="Trabajo Leire Salgado 4"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+4';"
-          />
-          <img
-            src="/galeria5.jpg"
-            alt="Trabajo Leire Salgado 5"
-            loading="lazy"
-            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+5';"
-          />
-        </div>
         <div class="mosaico-grande">
           <img
             src="/galeria6.jpg"
             alt="Trabajo Leire Salgado 6"
             loading="lazy"
             onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+6';"
+          />
+        </div>
+        <div class="mosaico-pequeñas">
+          <img
+            src="/galeria7.jpg"
+            alt="Trabajo Leire Salgado 7"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+7';"
+          />
+          <img
+            src="/galeria8.jpg"
+            alt="Trabajo Leire Salgado 8"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+8';"
+          />
+        </div>
+      </div>
+
+      <!-- FILA 2: galeria9 y galeria10 (pequeñas), galeria11 (grande) -->
+      <div class="mosaico mosaico-invertido">
+        <div class="mosaico-pequeñas">
+          <img
+            src="/galeria9.jpg"
+            alt="Trabajo Leire Salgado 9"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+9';"
+          />
+          <img
+            src="/galeria10.jpg"
+            alt="Trabajo Leire Salgado 10"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+10';"
+          />
+        </div>
+        <div class="mosaico-grande">
+          <img
+            src="/galeria11.jpg"
+            alt="Trabajo Leire Salgado 11"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+11';"
+          />
+        </div>
+      </div>
+
+      <!-- FILA 3: galeria12 y galeria13 (duo) -->
+      <div class="mosaico-duo">
+        <div class="mosaico-grande">
+          <img
+            src="/galeria12.jpg"
+            alt="Trabajo Leire Salgado 12"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+12';"
+          />
+        </div>
+        <div class="mosaico-grande">
+          <img
+            src="/galeria13.jpg"
+            alt="Trabajo Leire Salgado 13"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1A1A1A/A62639?text=Proyecto+13';"
           />
         </div>
       </div>
@@ -631,6 +651,13 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
     grid-template-columns: 1fr 2fr;
   }
 
+  .mosaico-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
   .mosaico-grande {
     aspect-ratio: 16 / 10;
     overflow: hidden;
@@ -742,7 +769,7 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
       grid-template-columns: 1fr;
       gap: 0.5rem;
     }
-    .mosaico, .mosaico-invertido {
+    .mosaico, .mosaico-invertido, .mosaico-duo {
       grid-template-columns: 1fr;
     }
     .galeria-corta-grid {

@@ -32,4 +32,22 @@ function Optimize-Image($srcPath, $destPath, $maxWidth) {
 $publicDir = "C:\Users\ana\.gemini\antigravity\scratch\leire-salgado-makeup\public"
 
 # Optimize public/sobre mi.jpg into public/sobremi.jpg
-Optimize-Image "$publicDir\sobre mi.jpg" "$publicDir\sobremi.jpg" 1200
+if (Test-Path "$publicDir\sobre mi.jpg") {
+    Optimize-Image "$publicDir\sobre mi.jpg" "$publicDir\sobremi.jpg" 1200
+}
+
+# Optimize galeria 6 to 13
+6..13 | ForEach-Object {
+    $num = $_
+    $srcJpg = "$publicDir\galeria$num.JPG"
+    if (-not (Test-Path $srcJpg)) { $srcJpg = "$publicDir\galeria$num.jpg" }
+    $destJpg = "$publicDir\galeria$num.jpg"
+    
+    # Create temp copy if src and dest are same path ignoring case
+    if (Test-Path $srcJpg) {
+        $tempPath = "$publicDir\temp_galeria$num.jpg"
+        Optimize-Image $srcJpg $tempPath 1400
+        Remove-Item $srcJpg -Force
+        Move-Item $tempPath $destJpg -Force
+    }
+}
