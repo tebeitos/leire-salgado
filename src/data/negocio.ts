@@ -13,7 +13,7 @@ export const servicios = [
   {
     numero: "01",
     titulo: "Caracterización y personajes",
-    descripcion: "Desde un boceto hasta un personaje completo. Cine, teatro, eventos, Halloween. Si existe en tu cabeza, Leire lo construye en una cara."
+    descripcion: "Desde un boceto hasta un personaje completo. Cine, teatro, eventos, Halloween. Si existe en tu cabeza, lo construímos juntos."
   },
   {
     numero: "02",
@@ -23,16 +23,16 @@ export const servicios = [
   {
     numero: "03",
     titulo: "Shootings y editorial",
-    descripcion: "Maquillaje pensado para la cámara. Ha trabajado en sesiones fotográficas y proyectos de moda con nivel de producción real."
+    descripcion: "El maquillaje que la cámara, el foco y el fotógrafo exigen es completamente distinto al de todos los días."
   },
   {
     numero: "04",
     titulo: "Bodas",
-    descripcion: "El día más fotografiado de tu vida. Natural, duradero y tuyo — no el de todas las novias, el tuyo."
+    descripcion: "El día más fotografiado de tu vida tiene que resaltar tu belleza natural. Duradero y tuyo: no el de todas las novias. El tuyo."
   },
   {
     numero: "05",
-    titulo: "Cursos",
-    descripcion: "Aprende las técnicas que Leire usa en sus proyectos. Grupos reducidos, contenido real, sin tutoriales genéricos."
+    titulo: "Cursos de automaquillaje, caracterización y body paint",
+    descripcion: "Aprende las técnicas que uso en mis proyectos. Grupos reducidos y contenido sin tutoriales genéricos."
   },
 ];
