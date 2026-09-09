@@ -39,33 +39,21 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
   <main>
     <!-- SECCIÓN 1 — HERO -->
     <section id="inicio" class="hero bg-negro">
-      <!-- Imagen de fondo de alta calidad (hero.jpg) -->
       <img
         src="/hero.jpg"
-        alt="Leire Salgado - Caracterización y Body Paint"
-        class="hero-bg-img"
-        onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/1A1A1A/A62639?text=Leire+Salgado+Makeup';"
+        alt="Leire Salgado Makeup Artist"
+        class="hero-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
       />
+      <div class="hero-fallback-bg" style="display:none;"></div>
+      <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <!-- Título H1 principal con tipografía Serif en crema -->
-        <h1 class="hero-title font-serif text-crema">
-          Leire Salgado
-        </h1>
-
-        <!-- Subtítulo / Frase con tipografía Sans en blanco/crema -->
-        <p class="hero-subtitle font-sans text-crema">
-          Caracterización, Body Paint y Maquillaje Artístico
-        </p>
-
-        <!-- Párrafo explicativo -->
         <p class="hero-text font-sans">
           Cada personaje empieza en papel.<br />
-          El maquillaje que la cámara y el foco exigen.
+          El maquillaje que la cámara, el foco y el fotógrafo exigen.
         </p>
       </div>
-
-
     </section>
 
     <!-- SECCIÓN 2 — CITA / FRASE DE CLIENTE -->
