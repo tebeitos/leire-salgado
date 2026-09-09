@@ -36,8 +36,8 @@ if (Test-Path "$publicDir\sobre mi.jpg") {
     Optimize-Image "$publicDir\sobre mi.jpg" "$publicDir\sobremi.jpg" 1200
 }
 
-# Optimize galeria 6 to 13
-6..13 | ForEach-Object {
+# Optimize galeria 5 to 13
+5..13 | ForEach-Object {
     $num = $_
     $srcJpg = "$publicDir\galeria$num.JPG"
     if (-not (Test-Path $srcJpg)) { $srcJpg = "$publicDir\galeria$num.jpg" }
