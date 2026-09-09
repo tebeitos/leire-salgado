@@ -24,30 +24,83 @@ import { negocio } from '../data/negocio';
 
       <div style="line-height: 1.8; color: rgba(242, 239, 232, 0.85);" class="font-sans">
         <p style="margin-bottom: 1.5rem;">
-          En el sitio web de {negocio.nombre} se respeta profundamente la privacidad de los usuarios y se garantiza la protección de los datos personales de acuerdo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).
+          En el sitio web de <strong>{negocio.nombre}</strong> se garantiza la máxima protección y confidencialidad de los datos personales facilitados por los usuarios, en cumplimiento estricto del Reglamento General de Protección de Datos de la Unión Europea (RGPD UE 2016/679) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).
         </p>
 
         <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
-          Responsable del Tratamiento
+          1. Responsable del Tratamiento
+        </h2>
+        <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
+          <li><strong>Identidad del Responsable:</strong> {negocio.nombre}</li>
+          <li><strong>Actividad:</strong> {negocio.profesion} — {negocio.especialidad}</li>
+          <li><strong>Teléfono / WhatsApp:</strong> {negocio.whatsappFormatted}</li>
+          <li><strong>Correo Electrónico de Contacto:</strong> <a href={`mailto:${negocio.email}`} class="text-granate">{negocio.email}</a></li>
+          <li><strong>Ubicación:</strong> {negocio.ciudad} ({negocio.cobertura})</li>
+        </ul>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
+          2. Datos Personales Recabados
         </h2>
         <p style="margin-bottom: 1.5rem;">
-          <strong>Responsable:</strong> {negocio.nombre}<br />
-          <strong>Especialidad:</strong> {negocio.profesion}<br />
-          <strong>Contacto:</strong> Vía WhatsApp o Instagram (<a href={negocio.instagram} target="_blank" rel="noopener noreferrer" class="text-granate">@leirekhaleesimkp</a>)
+          Los datos personales recabados a través de las vías de contacto disponibles en el sitio web (WhatsApp, teléfono, correo electrónico o redes sociales) pueden incluir: nombre y apellidos, número de teléfono, dirección de correo electrónico, fecha y ubicación del evento o servicio solicitado, así como cualquier detalle o consulta adicional remitida voluntariamente por el usuario.
         </p>
 
         <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
-          Finalidad del Tratamiento de Datos
+          3. Finalidad del Tratamiento
         </h2>
         <p style="margin-bottom: 1.5rem;">
-          Cuando te pones en contacto a través de WhatsApp, email o redes sociales para consultar disponibilidad, proyectos de caracterización, presupuestos o cursos, tus datos se utilizan exclusivamente para atender tu consulta y gestionar la comunicación del proyecto solicitado.
+          La recogida y tratamiento de tus datos personales responde a las siguientes finalidades:
+        </p>
+        <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
+          <li>Atender, gestionar y responder a consultas sobre servicios de maquillaje para bodas, caracterización de personajes, body paint o cursos.</li>
+          <li>Elaborar y remitir presupuestos personalizados.</li>
+          <li>Gestionar la reserva de fechas, citas y la prestación posterior del servicio contratado.</li>
+        </ul>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
+          4. Legitimación del Tratamiento
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          La base legal para el tratamiento de tus datos es el <strong>consentimiento explícito</strong> prestado al iniciar el contacto voluntario y enviar la consulta, así como la aplicación de medidas precontractuales o la ejecución del contrato de prestación de servicios en caso de contratación.
         </p>
 
         <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
-          Derechos del Usuario
+          5. Plazo de Conservación de Datos
         </h2>
         <p style="margin-bottom: 1.5rem;">
-          Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, limitación y oposición poniéndote en contacto directo con {negocio.nombre} a través de los canales de contacto publicados.
+          Los datos facilitados se conservarán durante el tiempo estrictamente necesario para atender la consulta planteada o prestar el servicio contratado, y posteriormente durante los plazos legalmente exigidos para responder ante eventuales responsabilidades legales o fiscales.
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
+          6. Destinatarios y Cesión a Terceros
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          No se cederán datos a terceros salvo obligación legal expresa. En los casos en que la comunicación se realice mediante plataformas como WhatsApp (Meta Platforms Ireland Ltd.), los datos se gestionan bajo sus políticas de privacidad y garantías de transferencia internacional vigentes.
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
+          7. Derechos del Usuario (ARCO / RGPD)
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          Como titular de los datos, tienes derecho a:
+        </p>
+        <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+          <li>Confirmar si se están tratando tus datos personales (Acceso).</li>
+          <li>Solicitar la rectificación de los datos inexactos (Rectificación).</li>
+          <li>Solicitar la supresión de tus datos cuando ya no sean necesarios (Supresión / Olvido).</li>
+          <li>Solicitar la limitación del tratamiento de tus datos en determinadas circunstancias (Limitación).</li>
+          <li>Oponerte al tratamiento de tus datos (Oposición).</li>
+          <li>Solicitar la portabilidad de tus datos a otro responsable (Portabilidad).</li>
+        </ul>
+        <p style="margin-bottom: 1.5rem;">
+          Para ejercitar cualquiera de estos derechos, basta con enviar un correo electrónico a <a href={`mailto:${negocio.email}`} class="text-granate">{negocio.email}</a> indicando el derecho que deseas ejercer. Asimismo, si consideras que tus derechos han sido vulnerados, puedes presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> a través de su sitio web <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" class="text-granate">www.aepd.es</a>.
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
+          8. Cookies y Uso de Almacenamiento Local
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          Este sitio web es de carácter estrictamente informativo y promocional. No utiliza cookies publicitarias ni de seguimiento de terceros para la elaboración de perfiles comerciales.
         </p>
       </div>
     </div>

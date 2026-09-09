@@ -1,12 +1,14 @@
 export const negocio = {
   nombre: "Leire Salgado",
-  profesion: "Makeup Artist",
-  especialidad: "Caracterización · Body Paint · Maquillaje Artístico",
+  profesion: "Makeup Artist & Caracterizadora",
+  especialidad: "Maquillaje de Novias y Bodas · Caracterización · Body Paint · Editorial",
   ciudad: "Madrid",
   cobertura: "Madrid y alrededores",
   instagram: "https://www.instagram.com/leirekhaleesimkp",
   whatsapp: "34670372923",
-  email: "PENDIENTE",
+  whatsappFormatted: "+34 670 372 923",
+  email: "contacto@leiresalgado.com",
+  web: "https://leiresalgado.com",
 };
 
 export const servicios = [

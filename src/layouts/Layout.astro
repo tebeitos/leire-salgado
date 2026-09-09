@@ -7,13 +7,13 @@ interface Props {
 }
 
 const {
-  title = "Leire Salgado · Makeup Artist & Caracterización en Madrid",
-  description = "Caracterización, body paint y maquillaje artístico en Madrid y Móstoles. Leire Salgado diseña cada personaje desde cero — primero en papel, luego en una cara."
+  title = "Leire Salgado · Maquilladora Profesional en Madrid | Bodas, Caracterización y Body Paint",
+  description = "Maquilladora profesional en Madrid especializada en maquillaje de novias y bodas, caracterización de personajes, body paint y editorial. Consulta presupuesto y disponibilidad."
 } = Astro.props;
 
-const siteUrl = Astro.url.origin || 'https://leiresalgado.com';
+const siteUrl = Astro.url.origin || negocio.web;
 const ogImageUrl = new URL('/hero.jpg', siteUrl).href;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://leiresalgado.com');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || negocio.web);
 ---
 
 <!DOCTYPE html>
@@ -26,19 +26,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://leiresal
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content="maquilladora profesional madrid, maquillaje novias madrid, caracterizacion personajes, body paint madrid, maquillaje editorial, maquillaje eventos madrid, leire salgado" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL.href} />
 
     <!-- SEO Local & Open Graph -->
     <meta name="geo.region" content="ES-M" />
-    <meta name="geo.placename" content="Móstoles, Madrid" />
+    <meta name="geo.placename" content="Madrid, España" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Leire Salgado · Makeup Artist" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:secure_url" content={ogImageUrl} />
     <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="1920" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -46,21 +51,56 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://leiresal
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <!-- Schema.org JSON-LD -->
+    <!-- Schema.org JSON-LD Estructurado -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Leire Salgado · Makeup Artist & Caracterización",
-      "image": "/hero.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Móstoles",
-        "addressRegion": "Madrid",
-        "addressCountry": "ES"
-      },
-      "areaServed": ["Madrid", "Móstoles", "España"],
-      "url": "https://leiresalgado.com",
-      "description": "Caracterización, body paint y maquillaje artístico en Madrid."
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": `${negocio.web}/#business`,
+          "name": `${negocio.nombre} · Makeup Artist & Caracterización`,
+          "image": ogImageUrl,
+          "url": negocio.web,
+          "telephone": "+34670372923",
+          "email": negocio.email,
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Madrid",
+            "addressRegion": "Comunidad de Madrid",
+            "addressCountry": "ES"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 40.416775,
+            "longitude": -3.703790
+          },
+          "areaServed": ["Madrid", "Móstoles", "Alcorcón", "Fuenlabrada", "Comunidad de Madrid"],
+          "sameAs": [
+            negocio.instagram
+          ],
+          "knowsAbout": [
+            "Maquillaje de Novias y Bodas",
+            "Caracterización de Personajes",
+            "Body Paint Corporal",
+            "Maquillaje para Shootings y Editorial",
+            "Cursos de Automaquillaje"
+          ],
+          "description": description
+        },
+        {
+          "@type": "Person",
+          "@id": `${negocio.web}/#person`,
+          "name": negocio.nombre,
+          "jobTitle": negocio.profesion,
+          "worksFor": {
+            "@id": `${negocio.web}/#business`
+          },
+          "sameAs": [
+            negocio.instagram
+          ]
+        }
+      ]
     })} />
 
     <!-- Google Fonts -->

@@ -24,32 +24,55 @@ import { negocio } from '../data/negocio';
 
       <div style="line-height: 1.8; color: rgba(242, 239, 232, 0.85);" class="font-sans">
         <p style="margin-bottom: 1.5rem;">
-          En cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), se informa de los datos identificativos del titular de este sitio web:
+          En cumplimiento de lo dispuesto en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se ponen a disposición de los usuarios los datos identificativos y de contacto de la titular de este sitio web:
         </p>
 
         <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
           <li><strong>Titular:</strong> {negocio.nombre}</li>
-          <li><strong>Actividad:</strong> {negocio.profesion} — {negocio.especialidad}</li>
-          <li><strong>Ubicación / Cobertura:</strong> {negocio.ciudad} ({negocio.cobertura})</li>
-          <li><strong>Contacto Instagram:</strong> <a href={negocio.instagram} target="_blank" rel="noopener noreferrer" class="text-granate">@leirekhaleesimkp</a></li>
-          <li><strong>Contacto Email:</strong> {negocio.email}</li>
+          <li><strong>Actividad Profesional:</strong> {negocio.profesion} — {negocio.especialidad}</li>
+          <li><strong>Ámbito de Cobertura:</strong> {negocio.ciudad} ({negocio.cobertura})</li>
+          <li><strong>Teléfono / WhatsApp:</strong> {negocio.whatsappFormatted}</li>
+          <li><strong>Correo Electrónico de Contacto:</strong> <a href={`mailto:${negocio.email}`} class="text-granate">{negocio.email}</a></li>
+          <li><strong>Instagram Profesional:</strong> <a href={negocio.instagram} target="_blank" rel="noopener noreferrer" class="text-granate">@leirekhaleesimkp</a></li>
+          <li><strong>Sitio Web Oficial:</strong> <a href={negocio.web} class="text-granate">leiresalgado.com</a></li>
         </ul>
 
         <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
-          Propiedad Intelectual y Contenidos
+          1. Condiciones de Uso
         </h2>
         <p style="margin-bottom: 1.5rem;">
-          Todos los derechos de propiedad intelectual de los contenidos de este sitio web, incluyendo sin limitación fotografías de caracterización, bocetos, obras de body paint, textos, logotipos y diseño gráfico, pertenecen en exclusiva a {negocio.nombre} o a terceros autorizados.
-        </p>
-        <p style="margin-bottom: 1.5rem;">
-          Queda prohibida la reproducción, distribución, comunicación pública o transformación de cualquier contenido sin la autorización previa y por escrito de la titular.
+          El acceso y navegación por este sitio web atribuyen la condición de usuario e implican la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal. El usuario se compromete a hacer un uso adecuado del sitio web conforme a la ley, la buena fe y el orden público.
         </p>
 
         <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
-          Enlaces Externos
+          2. Propiedad Intelectual e Industrial
         </h2>
         <p style="margin-bottom: 1.5rem;">
-          Este sitio web puede incluir enlaces a sitios web de terceros (como Instagram o WhatsApp). La titular no asume responsabilidad sobre los contenidos o políticas de privacidad de dichos sitios ajenos.
+          Todos los elementos que componen este sitio web, incluyendo sin limitación fotografías de maquillajes, trabajos de caracterización, creaciones de body paint, diseños gráficos, bocetos, logotipos, textos y código fuente, son propiedad exclusiva de <strong>{negocio.nombre}</strong> o cuentan con la correspondiente autorización o licencia de sus autores.
+        </p>
+        <p style="margin-bottom: 1.5rem;">
+          Queda expresamente prohibida la reproducción, distribución, comunicación pública, transformación o explotación total o parcial de los contenidos de este sitio web con fines comerciales sin el consentimiento previo, explícito y por escrito de la titular.
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
+          3. Exclusión de Responsabilidad
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          La titular no se hace responsable de los daños o perjuicios de cualquier naturaleza que pudieran derivarse de la interrupción del servicio web, la presencia de virus u otros elementos dañinos en los contenidos, o el uso indebido del sitio por parte de los usuarios.
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
+          4. Enlaces Externos
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          Este sitio web incluye enlaces directos a plataformas externas gestionadas por terceros, como <strong>WhatsApp</strong> y <strong>Instagram</strong>. La titular no ejerce control sobre dichos sitios y no asume responsabilidad alguna respecto a sus contenidos, disponibilidad o políticas de privacidad.
+        </p>
+
+        <h2 class="font-serif" style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--color-crema);">
+          5. Legislación Aplicable y Jurisdicción
+        </h2>
+        <p style="margin-bottom: 1.5rem;">
+          El presente Aviso Legal se rige en todos y cada uno de sus extremos por la legislación española. Para la resolución de cualquier conflicto o controversia derivada del acceso o uso de este sitio web, las partes se someten expresamente a los Juzgados y Tribunales de la ciudad de Madrid.
         </p>
       </div>
     </div>
