@@ -52,11 +52,11 @@ if (Test-Path "$publicDir\sobre mi.jpg") {
 
 # Explicit raw mappings for galeria5 to galeria13
 $mappings = [ordered]@{
-    "galeria5"  = "$publicDir\galeria4.jpg"
-    "galeria6"  = "$publicDir\body paint (2).JPG"
+    "galeria5"  = "$publicDir\halloween (4).jpg"
+    "galeria6"  = "$publicDir\caracterizaciones (1).JPG"
     "galeria7"  = "$publicDir\body paint.JPG"
-    "galeria8"  = "$publicDir\caracterizaciones (1).JPG"
-    "galeria9"  = "$publicDir\galeria5.jpg"
+    "galeria8"  = "$publicDir\body paint (2).JPG"
+    "galeria9"  = "$publicDir\galeria4.jpg"
     "galeria10" = "$publicDir\invitadas.JPG"
     "galeria11" = "$publicDir\invitadas (1).JPG"
     "galeria12" = "$publicDir\bodas (6).jpg"
