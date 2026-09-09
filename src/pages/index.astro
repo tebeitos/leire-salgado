@@ -128,9 +128,9 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
     </section>
 
     <!-- SECCIÓN GALERÍA MOSAICO (9 FOTOS) -->
-    <section id="galeria" class="galeria-seccion bg-negro">
+    <section id="galeria" class="galeria-seccion">
       <div class="container" style="padding-top: 4rem; padding-bottom: 2rem;">
-        <h2 class="section-title font-serif text-crema" style="text-align: center; margin-bottom: 3rem;">
+        <h2 class="section-title font-serif" style="text-align: center; margin-bottom: 3rem;">
           Galería
         </h2>
       </div>
@@ -597,17 +597,18 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
   }
 
   /* SECCIÓN 6 — GALERÍA COMPLETA MOSAICO */
+  /* SECCIÓN GALERÍA MOSAICO */
   .galeria-seccion {
     padding-bottom: 6rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0;
   }
 
   .mosaico {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
+    gap: 0;
     width: 100%;
   }
 
@@ -617,7 +618,6 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
 
   .mosaico-grande {
     overflow: hidden;
-    background-color: var(--color-charcoal);
   }
 
   .mosaico-grande img {
@@ -631,7 +631,7 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
   .mosaico-pequeñas {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0;
   }
 
   .mosaico-pequeñas img {
@@ -640,7 +640,6 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
     object-fit: cover;
     display: block;
     aspect-ratio: 1 / 1;
-    background-color: var(--color-charcoal);
   }
 
   .galeria-instagram {
@@ -733,14 +732,14 @@ const description = "Maquilladora profesional en Móstoles y Madrid. Especializa
 
   @media (max-width: 768px) {
     .galeria-seccion {
-      gap: 0.75rem;
+      gap: 0;
     }
     .mosaico, .mosaico-invertido {
       grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
+      gap: 0;
     }
     .mosaico-pequeñas {
-      gap: 0.75rem;
+      gap: 0;
     }
     .mosaico-grande img {
       aspect-ratio: 1 / 1;
