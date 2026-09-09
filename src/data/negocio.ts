@@ -3,7 +3,7 @@ export const negocio = {
   profesion: "Makeup Artist",
   especialidad: "Caracterización · Body Paint · Maquillaje Artístico",
   ciudad: "Madrid",
-  cobertura: "Madrid y en donde haga falta",
+  cobertura: "En Madrid y en donde haga falta",
   instagram: "https://www.instagram.com/leirekhaleesimkp",
   whatsapp: "34XXXXXXXXX",
   email: "PENDIENTE",
