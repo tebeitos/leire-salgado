@@ -12,23 +12,23 @@ export const negocio = {
 export const servicios = [
   {
     numero: "01",
+    titulo: "Bodas y Fiesta",
+    descripcion: "El día más fotografiado de tu vida tiene que resaltar tu belleza natural. Duradero y tuyo: no el de todas las novias. El tuyo."
+  },
+  {
+    numero: "02",
     titulo: "Caracterización y personajes",
     descripcion: "Desde un boceto hasta un personaje completo. Cine, teatro, eventos, Halloween. Si existe en tu cabeza, lo construímos juntos."
   },
   {
-    numero: "02",
+    numero: "03",
     titulo: "Body Paint",
     descripcion: "El cuerpo como lienzo. Creaciones artísticas únicas para sesiones fotográficas, eventos y proyectos especiales."
   },
   {
-    numero: "03",
+    numero: "04",
     titulo: "Shootings y editorial",
     descripcion: "El maquillaje que la cámara, el foco y el fotógrafo exigen es completamente distinto al de todos los días."
-  },
-  {
-    numero: "04",
-    titulo: "Bodas",
-    descripcion: "El día más fotografiado de tu vida tiene que resaltar tu belleza natural. Duradero y tuyo: no el de todas las novias. El tuyo."
   },
   {
     numero: "05",
