@@ -7,7 +7,7 @@ export const negocio = {
   instagram: "https://www.instagram.com/leirekhaleesimkp",
   whatsapp: "34670372923",
   whatsappFormatted: "+34 670 372 923",
-  email: "contacto@leiresalgado.com",
+  email: "hola@leiresalgado.com",
   web: "https://leiresalgado.com",
 };
 
