@@ -20,7 +20,7 @@ export const servicios = [
   {
     numero: "02",
     titulo: "Caracterización y personajes",
-    descripcion: "Desde un boceto hasta un personaje completo. Cine, teatro, eventos, Halloween. Si existe en tu cabeza, lo construímos juntos."
+    descripcion: "Desde un boceto hasta un personaje completo. Cine, teatro, eventos, Halloween. Si existe en tu cabeza, lo construimos juntas."
   },
   {
     numero: "03",
